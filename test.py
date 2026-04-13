@@ -9,7 +9,6 @@ class Game:
         self.clock = pygame.time.Clock() 
         self.running = True 
 
-        # ✅ Load and scale background ONCE
         self.background_image = pygame.image.load("bg apo.jpg").convert()
         self.background_image = pygame.transform.scale(self.background_image, (800, 600))
 
@@ -24,10 +23,8 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.running = False
  
-            # ✅ Draw background FIRST
             self.screen.blit(self.background_image, (0, 0))
 
-            # ✅ Then draw text on top
             self.draw_text("Welcome to the Final Apocalypse!", 40, (255, 255, 255), 150, 250)
 
             pygame.display.flip()
